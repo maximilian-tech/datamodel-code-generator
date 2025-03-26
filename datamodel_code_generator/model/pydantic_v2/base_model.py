@@ -231,8 +231,9 @@ class BaseModel(BaseModelBase):
     def _get_config_extra(self) -> Optional[Literal["'allow'", "'forbid'"]]:
         additionalProperties = self.extra_template_data.get('additionalProperties')
         allow_extra_fields = self.extra_template_data.get('allow_extra_fields')
-        if additionalProperties is not None or allow_extra_fields:
-            return (
-                "'allow'" if additionalProperties or allow_extra_fields else "'forbid'"
-            )
-        return None
+        return "'forbid'"
+        #if additionalProperties is not None or allow_extra_fields:
+        #    return (
+        #        "'allow'" if additionalProperties or allow_extra_fields else "'forbid'"
+        #    )
+        #return None
